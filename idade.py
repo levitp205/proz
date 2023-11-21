@@ -1,16 +1,21 @@
 def idadeIdade():
     nome = input("Qual é o seu nome: ")
-    idade = input("Digite o ano que você nasceu: ")
-    try:
-        if int(idade) >= 1922 and int(idade) <= 2021:
-            idade_atual = 2022 - int(idade)
-            print(f'{nome} tem {idade_atual} anos!')
-            breakpoint  
-        else:
-            print("Ano inválido!")
-    except:
-        print("Digite algo ou um cartacter válido!")
-        
+    
+    executar = True
+    
+    while(executar == True):
+        print("Digite seu ano de nascimento: ")
+        try:
+            ano = int(input())
+            if (ano < 1922) or (ano > 2021):
+                print('O ano precisa ser entre 1922 e 2021') 
+            else:
+                idade = 2022 - ano
+                print(f"O usuário {nome}, completou ou completará {idade} anos de idade em 2022")
+                executar = False
+        except:
+            print("Os anos precisan ser escritos somente por números")
+            
 
 idadeReal = idadeIdade()
 print(idadeReal)
